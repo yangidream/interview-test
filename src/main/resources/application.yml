@@ -1,0 +1,16 @@
+dev:
+  mysql:
+    hostname: 192.168.1.12
+
+spring:
+  application:
+    name: interview
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${dev.mysql.hostname}:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+
+
+
+
