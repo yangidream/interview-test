@@ -32,9 +32,9 @@ public abstract class BaseDaoSupport<T extends Serializable, M extends Serializa
     public List<M> query(QueryRule queryRule) {
         QueryRuleSqlBuilder bulider = new QueryRuleSqlBuilder(queryRule);
         StringBuilder sqlBuilder = new StringBuilder();
-        sqlBuilder.append("select ").append(op.allColumn);
+        sqlBuilder.append("select ");//.append(op.allColumn);
         String gss = bulider.getGroupBySelectSql();
-        sqlBuilder.append("".equals(gss) ? gss : ", " + gss);
+        sqlBuilder.append("".equals(gss) ? op.allColumn : "  " + gss);
         String ws = removeFirstAnd(bulider.getWhereSql());
         sqlBuilder.append(" from ").append(getTableName()).append("".equals(ws) ? ws : (" where " + ws));
         Object[] values = bulider.getValues();

@@ -593,6 +593,7 @@ public class QueryRuleSqlBuilder {
 		if(groupBy != null) {
 			List<GroupFunction> groupFunctionList = groupBy.getGroupFunctionList();
 			List<String> groupSql = new ArrayList<>();
+			groupSql.addAll(groupBy.getPropertyNames());
 			if(groupFunctionList != null && groupFunctionList.size() > 0) {
 				for(GroupFunction groupFunction : groupFunctionList) {
 					switch (groupFunction.getFunctionName()) {
