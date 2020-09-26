@@ -175,7 +175,7 @@ public class QueryRuleSqlBuilder {
 		appendGroupSql();
 		//拼装分页语句
 		appendLimitSql();
-		//拼装分组语句
+		//拼装select部分分组函数语句
 		appendSelectGroupSql();
 	}
 
